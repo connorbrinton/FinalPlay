@@ -1,0 +1,12 @@
+{
+  "name": "FinalPlay",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Customizes your Google Play Music experience.",
+  "content_scripts": [
+    {
+      "matches": ["*://play.google.com/music*"],
+      "css": ["css/fair-artists.css"]
+    }
+  ]
+}

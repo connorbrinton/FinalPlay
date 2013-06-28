@@ -1,0 +1,39 @@
+/*
+ * General
+ **********/
+#main > .g-content:not([id]) {
+	text-align: center; /* Centering columns */
+}
+.g-content {
+	margin: 20px 20px 30px 20px !important; /* Centering better */
+}
+#shop-nav {
+	display: none; /* Hiding "Shop" link */
+}
+#google-play-recommends {
+	display: none; /* Hiding "Google play recommends" link */
+}
+
+/* 
+ * Artist list view
+ **********/
+/* Removing images */
+[data-type="ar"] .image-wrapper {
+	height: 0 !important;
+}
+[data-type="ar"] .image {
+	visibility: hidden; /* Just in case*/
+}
+
+
+/*
+ * Artist detail view
+ **********/
+.artist-art, .artist-details {
+	display: none;
+}
+
+.artist-view > .section-header {
+	margin-top: 0;
+	padding-top: 0;
+}
