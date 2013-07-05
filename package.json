@@ -1,0 +1,11 @@
+{
+  "name": "final-play",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.1",
+    "matchdep": "~0.1.2",
+    "grunt-contrib-compress": "~0.5.2"
+  }
+}
