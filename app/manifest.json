@@ -1,8 +1,14 @@
 {
   "name": "FinalPlay",
+  "description": "Customizes your Google Play Music experience.",
+
   "version": "0.1",
   "manifest_version": 2,
-  "description": "Customizes your Google Play Music experience.",
+
+  "icons": {
+    "128": "icon_128.png"
+  },
+
   "content_scripts": [
     {
       "matches": ["*://play.google.com/music*"],
