@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  var config = {
+  var dirs = {
     app: 'app',
     temp: '.tmp',
     dist: 'dist',
@@ -12,24 +12,24 @@ module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
 
   grunt.initConfig({
-    config: config,
+    dirs: dirs,
     pkg: pkg,
 
     copy: {
       temp: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>',
+          cwd: '<%= dirs.app %>',
           src: '**',
-          dest: '<%= config.temp %>'
+          dest: '<%= dirs.temp %>'
         }]
       },
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.temp %>',
+          cwd: '<%= dirs.temp %>',
           src: '**',
-          dest: '<%= config.dist %>'
+          dest: '<%= dirs.dist %>'
         }]
       }
     },
@@ -38,13 +38,19 @@ module.exports = function(grunt) {
       cws: {
         files: [{
           expand: true,
-          cwd: '<%= config.dist %>',
+          cwd: '<%= dirs.dist %>',
           src: '**'
         }],
         options: {
-          archive: '<%= config.cws %>/<%= pkg.name %>.zip'
+          archive: '<%= dirs.cws %>/<%= pkg.name %>.zip'
         }
       }
+    },
+
+    clean: {
+    	temp: ["<%= dirs.temp %>"],
+    	dist: ["<%= dirs.dist %>"],
+    	cws: ["<%= dirs.cws %>"]
     }
   });
 
